@@ -7,21 +7,9 @@ namespace labb3
         static void Main(string[] args)
         {
             Console.WriteLine("Labb3");
-            getStudents();
+            ProgramNavigation navigation = new ProgramNavigation();
+            navigation.Navigate();
 
-        }
-        static void getStudents()
-        {
-            using (var context = new SchoolDBContext())
-            {
-                var employees = context.Students.Select(e => e);
-                Console.Clear();
-                Console.WriteLine("Students:");
-                foreach (var employee in employees)
-                {
-                    Console.WriteLine($"\n{employee.FirstName} {employee.LastName}");
-                }
-            }
         }
     }
 }
